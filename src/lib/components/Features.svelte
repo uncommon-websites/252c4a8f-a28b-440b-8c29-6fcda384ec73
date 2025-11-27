@@ -1,0 +1,103 @@
+<script lang="ts">
+	// Icons
+	import IconZap from '~icons/lucide/zap';
+	import IconMap from '~icons/lucide/map';
+	import IconDownload from '~icons/lucide/download';
+	import IconDollarSign from '~icons/lucide/dollar-sign';
+	import IconGlobe from '~icons/lucide/globe';
+	import IconLineChart from '~icons/lucide/line-chart';
+
+	type Feature = {
+		icon: any;
+		title: string;
+		description: string;
+	};
+
+	type Props = {
+		title?: string;
+		subtitle?: string;
+	};
+
+	let { title = "Everything you need. Nothing you don't.", subtitle = 'Features' }: Props =
+		$props();
+
+	const features: Feature[] = [
+		{
+			icon: IconZap,
+			title: 'Lightning-fast setup',
+			description:
+				'Launch a presale campaign in minutes, not days. No complex workflows, no CRM bloat—just enter your details and go live.'
+		},
+		{
+			icon: IconMap,
+			title: 'Heat map routing intelligence',
+			description:
+				'Visualize demand geographically before finalizing tour dates. Make data-driven routing decisions that maximize turnout and minimize risk.'
+		},
+		{
+			icon: IconDownload,
+			title: 'Complete data ownership',
+			description:
+				'Export your registrations anytime with zero restrictions. Your data belongs to you, not locked in our platform.'
+		},
+		{
+			icon: IconDollarSign,
+			title: 'Pay-per-campaign pricing',
+			description:
+				'No annual contracts, no per-seat fees, no surprise charges. Pay only for the campaigns you run, when you run them.'
+		},
+		{
+			icon: IconGlobe,
+			title: 'Custom domain support',
+			description:
+				'Launch campaigns on your own domain with automatic SSL provisioning. Maintain brand consistency across every touchpoint.'
+		},
+		{
+			icon: IconLineChart,
+			title: 'Real-time analytics',
+			description:
+				'Track registrations, referral sources, and UTM parameters as they happen. Clear insights without overwhelming complexity.'
+		}
+	];
+</script>
+
+<section class="py-24 md:py-32">
+	<div class="container mx-auto px-4 md:px-20">
+		<!-- Section Header -->
+		<div class="mb-16 max-w-3xl">
+			<p class="mb-4 text-sm font-medium uppercase tracking-wider text-[var(--muted-foreground)]">
+				{subtitle}
+			</p>
+			<h2 class="text-4xl font-bold leading-tight text-[var(--foreground)] md:text-5xl">
+				{title}
+			</h2>
+		</div>
+
+		<!-- Features Grid -->
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{#each features as feature}
+				{@const Icon = feature.icon}
+				<div
+					class="group rounded-lg border border-[var(--border)] bg-[var(--background)] p-8 transition-all duration-300 hover:border-[var(--accent)]"
+				>
+					<!-- Icon -->
+					<div
+						class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--muted)] transition-colors duration-300 group-hover:bg-[var(--accent)]"
+					>
+						<Icon
+							class="h-6 w-6 text-[var(--foreground)] transition-colors duration-300 group-hover:text-[var(--accent-foreground)]"
+						/>
+					</div>
+
+					<!-- Content -->
+					<h3 class="mb-3 text-xl font-bold text-[var(--foreground)]">
+						{feature.title}
+					</h3>
+					<p class="leading-relaxed text-[var(--muted-foreground)]">
+						{feature.description}
+					</p>
+				</div>
+			{/each}
+		</div>
+	</div>
+</section>
