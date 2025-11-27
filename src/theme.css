@@ -1,0 +1,44 @@
+/* Theme Configuration */
+
+:root {
+	/* Light mode base (fallback) */
+	--background: oklch(1 0 0); /* White */
+	--foreground: oklch(0.147 0.004 49.25); /* Near black */
+	--muted: oklch(0.97 0.001 106.424); /* Light gray */
+	--muted-foreground: oklch(0.553 0.013 58.071); /* Medium gray */
+	--border: oklch(0.869 0.005 56.366); /* Border gray */
+}
+
+/* Dark Mode Theme */
+[data-theme='dark'] {
+	--background: oklch(0.147 0.004 49.25); /* Near black */
+	--foreground: oklch(0.985 0.001 106.423); /* Near white */
+	--muted: oklch(0.216 0.006 56.043); /* Dark gray */
+	--muted-foreground: oklch(0.709 0.01 56.259); /* Light gray for text */
+	--border: oklch(0.268 0.007 34.298); /* Dark border */
+	
+	/* Accent colors for dark mode */
+	--accent: oklch(0.606 0.25 292.717); /* Primary purple */
+	--accent-foreground: oklch(0.985 0.001 106.423); /* White text on accent */
+	
+	/* Secondary accent */
+	--secondary: oklch(0.283 0.141 291.089); /* Darker purple */
+	--secondary-foreground: oklch(0.985 0.001 106.423); /* White text */
+}
+
+/* Optional: Light Mode Theme (commented out by default since we're using dark) */
+/*
+[data-theme='light'] {
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.147 0.004 49.25);
+	--muted: oklch(0.97 0.001 106.424);
+	--muted-foreground: oklch(0.553 0.013 58.071);
+	--border: oklch(0.869 0.005 56.366);
+	
+	--accent: oklch(0.606 0.25 292.717);
+	--accent-foreground: oklch(1 0 0);
+	
+	--secondary: oklch(0.585 0.233 277.117);
+	--secondary-foreground: oklch(1 0 0);
+}
+*/
